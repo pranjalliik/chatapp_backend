@@ -13,6 +13,8 @@ import msgRouter from "./routes/MessageRouter.js";
 import { globalErrorHandler } from './controllers/errorController.js';
 import { subscribe, publish } from "./redis/pubsub.js";
 import compression  from 'compression'
+import authRouter from "./routes/authRouter.js"
+import userRouter from './routes/userRouter.js';
 
 process.on('uncaughtException', err => {
     console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -126,6 +128,8 @@ app.get('/', (req, res) => {
 });
 app.use('/api/chat/v1',convRouter)
 app.use('/api/msg/v2',msgRouter)
+app.use('/api/auth/v1',authRouter);
+app.use('/api/user/v2',userRouter);
 
 
 app.all('*',(req,res,next) =>{

@@ -1,6 +1,6 @@
 
 import express from "express"
-import {protectRoute} from "../controllers/authController.js"
+import {protectRoute} from "../controllers/authhController.js"
 import {getConversations,getConvMsg , createConversation} from "../controllers/conversationController.js"
 
 
