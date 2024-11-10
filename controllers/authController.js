@@ -28,7 +28,7 @@ const  signToken = id =>{
        const token = signToken(user._id)
        const cookieopt = {
         expires: new Date(
-          Date.now() + 1 * 24 *60 * 60 *1000),httpOnly:true
+          Date.now() + 1 * 24 *60 * 60 *1000), httpOnly : true , secure : true, sameSite : 'None' 
         }
    res.cookie('jwt',token,cookieopt)
   
@@ -62,7 +62,7 @@ const  signToken = id =>{
              const token = signToken(user._id);
                const cookieopt = {
                expires: new Date(
-               Date.now() + 1 * 24 *60 * 60 *1000),httpOnly:true, sameSite : 'Lax' 
+               Date.now() + 1 * 24 *60 * 60 *1000), httpOnly:true , secure : true , sameSite : 'None' 
       
                }
            res.cookie('jwt',token,cookieopt)
