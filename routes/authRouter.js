@@ -1,6 +1,6 @@
 import express from 'express'
 let authRouter = express.Router();
-import signUp ,{signin,signout,protectRoute,verifyUser} from './../controllers/authcontroller.js';
+import signUp ,{signin,signout,protectRoute,verifyUser} from './../controllers/authController.js';
 /*
 authRouter
 .route('/forgotpassword')
